@@ -140,6 +140,7 @@ locals{
   tags = {
     Blueprint  = local.name
     GithubRepo = "github.com/jmroche/gitops-bridge-eks-argocd-demo"
+    auto-delete = "never"
   }  
 }
 
