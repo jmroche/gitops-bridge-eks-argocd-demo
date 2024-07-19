@@ -1,0 +1,30 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: appofapps
+  namespace: argocd
+spec:
+  syncPolicy:
+    preserveResourcesOnDeletion: true
+  generators:
+  - clusters:
+      selector:
+        matchLabels:
+          environment: hub
+  template:
+    metadata:
+      name: 'appofapps'
+    spec:
+      project: default
+      source:
+        repoURL: '{{metadata.annotations.platform_repo_url}}'
+        path: '{{metadata.annotations.platform_repo_basepath}}appofapps'
+        targetRevision: '{{metadata.annotations.platform_repo_revision}}'
+        directory:
+          recurse: true
+      destination:
+        namespace: 'argocd'
+        name: '{{name}}'
+      syncPolicy:
+        automated:
+          allowEmpty: true

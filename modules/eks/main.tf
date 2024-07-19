@@ -44,7 +44,7 @@ module "eks" {
 
 
   eks_managed_node_groups = {
-    initial = {
+    cluster_node = {
       instance_types = ["t3.medium"]
 
       min_size     = 3

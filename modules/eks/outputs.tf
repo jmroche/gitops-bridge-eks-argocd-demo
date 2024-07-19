@@ -18,3 +18,13 @@ output "hub_node_security_group_id" {
   description = "Cluster Hub SG"
   value       = module.eks.node_security_group_id
 }
+
+output "cluster_version"{
+  description = "Cluster Hub version"
+  value       = module.eks.cluster_version
+}
+
+output "oidc_provider_arn"{
+  description = "OIDC Provider ARN"
+  value       = module.eks.oidc_provider_arn
+}
