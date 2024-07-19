@@ -87,7 +87,7 @@ variable "gitops_platform_basepath" {
 variable "gitops_platform_path" {
   type        = string  
   description = "Git repository path for platform"
-  default     = "bootstrap"
+  default     = "appofapps"
 }
 variable "gitops_platform_revision" {
   type        = string  
