@@ -82,7 +82,7 @@ variable "gitops_platform_url" {
 variable "gitops_platform_basepath" {
   type        = string  
   description = "Git repository base path for platform"
-  default     = "gitops/bootstrap/controlplane"
+  default     = "gitops/bootstrap/control-plane"
 }
 variable "gitops_platform_path" {
   type        = string  
