@@ -175,6 +175,7 @@ module "eks_blueprints_addons" {
   enable_karpenter                    = var.addons.enable_karpenter
   enable_velero                       = var.addons.enable_velero
   enable_aws_gateway_api_controller   = var.addons.enable_aws_gateway_api_controller
+  enable_kube_prometheus_stack        = var.addons.enable_kube_prometheus_stack
 
   tags = local.tags
 
@@ -193,7 +194,7 @@ module "gitops_bridge_bootstrap" {
     metadata     = local.addons_metadata
     addons       = local.addons
   }
-  apps = local.argocd_apps
+  # apps = local.argocd_apps
   argocd = {
     namespace        = local.argocd_namespace
     chart_version    = "7.3.8"

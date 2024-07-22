@@ -12,6 +12,7 @@ locals {
   tags = {
     Blueprint  = local.name
     GithubRepo = ""
+    auto-delete = "never"
   }
 }
 

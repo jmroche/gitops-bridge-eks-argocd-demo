@@ -19,6 +19,7 @@ locals{
     authentication_mode = var.authentication_mode
     tags = {
         Environment = "prod"
+        auto-delete = "never"
     }
 
 }

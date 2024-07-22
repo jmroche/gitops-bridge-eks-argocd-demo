@@ -3,19 +3,19 @@ variable "addons" {
   type        = any
   default = {
     # aws
-    enable_cert_manager                 = true
-    enable_aws_ebs_csi_resources        = true # generate gp2 and gp3 storage classes for ebs-csi
-    enable_aws_cloudwatch_metrics       = true
-    enable_external_secrets             = true
-    enable_aws_load_balancer_controller = true
-    enable_aws_for_fluentbit            = true
+    enable_cert_manager                 = false
+    enable_aws_ebs_csi_resources        = false # generate gp2 and gp3 storage classes for ebs-csi
+    enable_aws_cloudwatch_metrics       = false
+    enable_external_secrets             = false
+    enable_aws_load_balancer_controller = false
+    enable_aws_for_fluentbit            = false
     enable_karpenter                    = false
     enable_aws_ingress_nginx            = false # inginx configured with AWS NLB
     # oss
-    enable_metrics_server = true
-    enable_kyverno        = true
+    enable_metrics_server = false
+    enable_kyverno        = false
     # Enable if want argo manage argo from gitops
-    enable_aws_argocd = true
+    enable_aws_argocd = false
 
     enable_aws_efs_csi_driver                    = false
     enable_aws_fsx_csi_driver                    = false
@@ -43,7 +43,7 @@ variable "addons" {
     enable_gatekeeper                      = false
     enable_gpu_operator                    = false
     enable_ingress_nginx                   = false
-    enable_kube_prometheus_stack           = true
+    enable_kube_prometheus_stack           = false
     enable_prometheus_adapter              = false
     enable_secrets_store_csi_driver        = false
     enable_vpa                             = false
